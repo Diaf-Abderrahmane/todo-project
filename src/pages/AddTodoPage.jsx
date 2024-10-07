@@ -1,12 +1,37 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {useState} from 'react'
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
-const AddTodoPage = () => {
+
+
+const AddTodoPage = ({ addTodoSubmit }) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
-    const [assignedTo, setType] = useState('');
+    const [assignedTo, setType] = useState('Abdou');
     const [priority, setPriority] = useState('Low');
+    const navigate = useNavigate();
+
+    const submitForm = (e) => {
+      const today = new Date().toISOString().split('T')[0];
+      e.preventDefault();
+      const newTodo = {
+        title,
+        description,
+        isCompleted : false,
+        priority,
+        dueDate : today,
+        createdAt : today,
+        updatedAt : '',
+        tags : '',
+        assignedTo,
+      }
+      addTodoSubmit(newTodo)
+      toast.success('Todo Added Successfully')
+      return navigate('/todos')
+
+    }
 
 
   return (
@@ -15,7 +40,7 @@ const AddTodoPage = () => {
     <div
       className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0"
     >
-      <form >
+      <form onSubmit={submitForm}>
         <h2 className="text-3xl text-center font-semibold mb-6">Add Todo</h2>
 
         {/* Title */}
@@ -91,8 +116,7 @@ const AddTodoPage = () => {
           ></textarea>
         </div>
 
-       
-
+        {/* Button */}
         <div>
           <button
             className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
@@ -101,6 +125,7 @@ const AddTodoPage = () => {
             Add Todo
           </button>
         </div>
+        
       </form>
     </div>
   </div>

@@ -12,13 +12,25 @@ import AddTodoPage from './pages/AddTodoPage';
 
 const App = () => {
 
+  const addTodo = async (newTodo) => {
+    const res = await fetch('http://localhost:5000/todos', {
+      method: 'POST',
+      headers: {
+        'Content-Type' : 'Application/json'
+      },
+      body: JSON.stringify(newTodo),
+
+    });
+    return
+  }
+
   const router = createBrowserRouter(
     createRoutesFromElements(
     <Route path='/' element={<MainLayout/>}>
     <Route index element={<HomePage/>}/>
     <Route path='/todos' element={<TodosPage/>}/>
     <Route path='/todos/:id' element={<TodoDetailPage/>} loader={todoLoader}/>
-    <Route path='/add-todo' element={<AddTodoPage/>}/>
+    <Route path='/add-todo' element={<AddTodoPage addTodoSubmit={addTodo}/>} />
     <Route path='*' element={<NotFoundPage/>}/>
       {/* <Route path='*' element={<NotFoundPage/>}/> */}
     </Route>
