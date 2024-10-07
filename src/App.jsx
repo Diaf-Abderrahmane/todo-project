@@ -4,6 +4,9 @@ import HomePage from './pages/HomePage';
 import MainLayout from './layouts/MainLayout';
 import TodosPage from './pages/TodosPage';
 import NotFoundPage from './pages/NotFoundPage';
+import TodoDetailPage, { todoLoader } from './pages/TodoDetailPage';
+import { jobLoader } from '../../react-crash-course/src/pages/JobPage';
+
 
 
 const App = () => {
@@ -13,6 +16,7 @@ const App = () => {
     <Route path='/' element={<MainLayout/>}>
     <Route index element={<HomePage/>}/>
     <Route path='/todos' element={<TodosPage/>}/>
+    <Route path='/todos/:id' element={<TodoDetailPage/>} loader={todoLoader}/>
     <Route path='*' element={<NotFoundPage/>}/>
       {/* <Route path='*' element={<NotFoundPage/>}/> */}
     </Route>

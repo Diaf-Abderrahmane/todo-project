@@ -3,6 +3,7 @@ import Card from './Card'
 import { Link } from 'react-router-dom'
 
 
+
 const Todo = ({todo}) => {
   return (
     <>
@@ -15,10 +16,10 @@ const Todo = ({todo}) => {
             <div>{todo.priority}</div>
             <div className='mb-5'>{todo.dueDate}</div>
             <Link
-              to='/jobs'
+              to={`/todos/${todo.id}`}
               className='inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700'
             >
-              Browse Jobs
+              Read More
             </Link>
         </Card>
     </>

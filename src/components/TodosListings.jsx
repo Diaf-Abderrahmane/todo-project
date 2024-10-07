@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Todo from './Todo'
+import Navbar from './Navbar';
+import NoTodos from './NoTodos';
 
 const TodosListings = ({isHome= false}) => {
 
@@ -31,6 +33,7 @@ const TodosListings = ({isHome= false}) => {
         fetchTodos();
     }, []);
 
+    //get todays todos
     useEffect(() => {
         // Step 2: Get today's date in 'YYYY-MM-DD' format
     const today = new Date().toISOString().split('T')[0];
@@ -47,9 +50,9 @@ const TodosListings = ({isHome= false}) => {
     <section className='bg-blue-50 py-10'>
         <div className='container-xl lg:container m-auto'>
         <div className='text-center text-3xl font-bold text-indigo-500'>{isHome? 'Today\'s Todos': 'Your Todos'}</div>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 p-4 rounded-lg'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 p-4 rounded-lg'>
             {/* shadow like elevation ( md = medium ) */}
-            {isHome? todosForToday.map((todo)=> (
+            {isHome? todosForToday.length === 0 ? <NoTodos/> : todosForToday.map((todo)=> (
                     //needs to have a key for every item of the list
                       <Todo key={todo.id} todo={todo}/>
                      )): todos.map((todo)=> (
