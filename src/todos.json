@@ -16,20 +16,6 @@
       "assignedTo": "JaneSmith"
     },
     {
-      "id": "2",
-      "title": "Task 2",
-      "description": "This is the detailed description for task 2.",
-      "isCompleted": true,
-      "priority": "Medium",
-      "dueDate": "2024-12-10",
-      "createdAt": "2024-10-01 00:00:00",
-      "updatedAt": "2024-12-25 00:00:00",
-      "tags": [
-        "Work"
-      ],
-      "assignedTo": "Unassigned"
-    },
-    {
       "id": "3",
       "title": "Task 3",
       "description": "This is the detailed description for task 3.",
@@ -131,33 +117,6 @@
       "assignedTo": "JaneSmith"
     },
     {
-      "id": "10",
-      "title": "Task 10",
-      "description": "This is the detailed description for task 10.",
-      "isCompleted": false,
-      "priority": "High",
-      "dueDate": "2024-12-04",
-      "createdAt": "2024-10-01 00:00:00",
-      "updatedAt": "2024-10-13 00:00:00",
-      "tags": [
-        "Personal",
-        "Urgent"
-      ],
-      "assignedTo": "JaneSmith"
-    },
-    {
-      "id": "b55e",
-      "title": "Do the damn dishes",
-      "description": "You better do the dishes before i get home motherfucker.",
-      "isCompleted": false,
-      "priority": "Low",
-      "dueDate": "10/7/202411",
-      "createdAt": "10/7/2024",
-      "updatedAt": "",
-      "tags": "",
-      "assignedTo": ""
-    },
-    {
       "id": "32c8",
       "title": "test",
       "description": "test",
@@ -165,30 +124,6 @@
       "priority": "Low",
       "dueDate": "10/7/202411",
       "createdAt": "10/7/2024",
-      "updatedAt": "",
-      "tags": "",
-      "assignedTo": ""
-    },
-    {
-      "id": "6119",
-      "title": "wow",
-      "description": "wow",
-      "isCompleted": false,
-      "priority": "Low",
-      "dueDate": "10/7/2024",
-      "createdAt": "10/7/2024",
-      "updatedAt": "",
-      "tags": "",
-      "assignedTo": ""
-    },
-    {
-      "id": "e0d1",
-      "title": "ff",
-      "description": "ff",
-      "isCompleted": false,
-      "priority": "Low",
-      "dueDate": "2024-10-07",
-      "createdAt": "2024-10-07",
       "updatedAt": "",
       "tags": "",
       "assignedTo": ""
@@ -204,6 +139,174 @@
       "updatedAt": "",
       "tags": "",
       "assignedTo": "Nour"
+    },
+    {
+      "id": "9e10",
+      "title": "do the damn dishes you crackhead",
+      "description": "watch yo mouth motherfucker",
+      "isCompleted": false,
+      "priority": "High",
+      "dueDate": "2024-10-07",
+      "createdAt": "2024-10-07",
+      "updatedAt": "",
+      "tags": "",
+      "assignedTo": "Abdou"
+    },
+    {
+      "id": "f19a",
+      "title": "test",
+      "description": "test",
+      "isCompleted": false,
+      "priority": "Low",
+      "dueDate": "2024-10-07",
+      "createdAt": "2024-10-07",
+      "updatedAt": "2024-10-07",
+      "tags": "",
+      "assignedTo": "Abdou"
+    },
+    {
+      "id": "b78b",
+      "title": "haha",
+      "description": "haha",
+      "isCompleted": false,
+      "priority": "Low",
+      "dueDate": "2024-10-07",
+      "createdAt": "2024-10-07",
+      "updatedAt": "2024-10-07",
+      "tags": "",
+      "assignedTo": "Abdou"
+    },
+    {
+      "id": "b49c",
+      "title": "sdqfd",
+      "description": "qsdfq",
+      "isCompleted": false,
+      "priority": "Low",
+      "dueDate": "2024-10-07",
+      "createdAt": "2024-10-07",
+      "updatedAt": "2024-10-07",
+      "tags": "",
+      "assignedTo": "Abdou"
+    },
+    {
+      "id": "e911",
+      "title": "sdfqsd",
+      "description": "qsdfqds",
+      "isCompleted": false,
+      "priority": "Low",
+      "dueDate": "2024-10-07",
+      "createdAt": "2024-10-07",
+      "updatedAt": "2024-10-07",
+      "tags": "",
+      "assignedTo": "Abdou"
+    },
+    {
+      "id": "e5df",
+      "title": "qdsfq",
+      "description": "qdsfq",
+      "isCompleted": false,
+      "priority": "Low",
+      "dueDate": "2024-10-07",
+      "createdAt": "2024-10-07",
+      "updatedAt": "2024-10-07",
+      "tags": "",
+      "assignedTo": "Abdou"
+    },
+    {
+      "id": "cc66",
+      "title": "qdsf",
+      "description": "qdsfqd",
+      "isCompleted": false,
+      "priority": "Low",
+      "dueDate": "2024-10-07",
+      "createdAt": "2024-10-07",
+      "updatedAt": "2024-10-07",
+      "tags": "",
+      "assignedTo": "Abdou"
+    },
+    {
+      "id": "61e1",
+      "title": "777777777",
+      "description": "777777777",
+      "isCompleted": false,
+      "priority": "Low",
+      "dueDate": "2024-10-07",
+      "createdAt": "2024-10-07",
+      "updatedAt": "2024-10-07",
+      "tags": "",
+      "assignedTo": "Abdou"
+    },
+    {
+      "id": "9805",
+      "title": "88",
+      "description": "88",
+      "isCompleted": false,
+      "priority": "Low",
+      "dueDate": "2024-10-07",
+      "createdAt": "2024-10-07",
+      "updatedAt": "2024-10-07",
+      "tags": "",
+      "assignedTo": "Abdou"
+    },
+    {
+      "id": "b800",
+      "title": "9999",
+      "description": "999",
+      "isCompleted": false,
+      "priority": "Low",
+      "dueDate": "2024-10-07",
+      "createdAt": "2024-10-07",
+      "updatedAt": "2024-10-07",
+      "tags": "",
+      "assignedTo": "Abdou"
+    },
+    {
+      "id": "3fcc",
+      "title": "999",
+      "description": "999",
+      "isCompleted": false,
+      "priority": "Low",
+      "dueDate": "2024-10-07",
+      "createdAt": "2024-10-07",
+      "updatedAt": "2024-10-07",
+      "tags": "",
+      "assignedTo": "Abdou"
+    },
+    {
+      "id": "ca68",
+      "title": "999",
+      "description": "9999",
+      "isCompleted": false,
+      "priority": "Low",
+      "dueDate": "2024-10-07",
+      "createdAt": "2024-10-07",
+      "updatedAt": "2024-10-07",
+      "tags": "",
+      "assignedTo": "Abdou"
+    },
+    {
+      "id": "e44c",
+      "title": "sdfs",
+      "description": "sdfs",
+      "isCompleted": false,
+      "priority": "Low",
+      "dueDate": "2024-10-07",
+      "createdAt": "2024-10-07",
+      "updatedAt": "2024-10-07",
+      "tags": "",
+      "assignedTo": "Abdou"
+    },
+    {
+      "id": "7e80",
+      "title": "111",
+      "description": "1111",
+      "isCompleted": false,
+      "priority": "Low",
+      "dueDate": "2024-10-07",
+      "createdAt": "2024-10-07",
+      "updatedAt": "2024-10-07",
+      "tags": "",
+      "assignedTo": "Abdou"
     }
   ]
 }

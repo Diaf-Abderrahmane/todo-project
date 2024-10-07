@@ -1,14 +1,26 @@
 import React from 'react'
-import { Link, useLoaderData, useParams } from 'react-router-dom'
+import { Link, useLoaderData, useNavigate, useParams } from 'react-router-dom'
 import Card from '../components/Card';
 import { FaArrowLeft, FaCheck, FaTimes } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 
 
-const TodoDetailPage = () => {
+const TodoDetailPage = ({deleteTodoMethod}) => {
 
     const {id} = useParams();
     const todo = useLoaderData();
+    const navigate = useNavigate();
+
+    const onDeleteClick = (todoId) => {
+      const confirm = window.confirm('Are you sure you want to delete this todo ?')
+      if (!confirm) return;
+      
+        deleteTodoMethod(todoId);
+        toast.success('Todo Deleted Successfully')
+        navigate('/todos');
+      
+    }
 
   return (
     <>
@@ -55,8 +67,7 @@ const TodoDetailPage = () => {
               <h3 className=" text-md font-bold mb-6">
                 {todo.description}
               </h3>
-
-              <h3 className="text-indigo-800 text-lg font-bold mb-2">{todo.dueDate}</h3>
+              <h3 className="text-indigo-800 text-lg font-bold mb-2">{`Due Date : ${todo.dueDate}`}</h3>
             </div>
           </main>
 
@@ -66,10 +77,8 @@ const TodoDetailPage = () => {
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-bold mb-6">Creation Date</h3>
 
-              <h2 className="text-2xl">{todo.craetedAt}</h2>
-
               <p className="my-2 bg-red-100 p-2 font-bold rounded-xl">
-                {todo.updatedAt}
+                {todo.createdAt}
               </p>
 
               <hr className="my-4" />
@@ -94,7 +103,7 @@ const TodoDetailPage = () => {
                 >Edit Todo
                 </Link>
               <button
-                onClick={() => onDeleteClick(job.id)}
+                onClick={() => {onDeleteClick(todo.id)}}
                 className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
               >
                 Delete Todo

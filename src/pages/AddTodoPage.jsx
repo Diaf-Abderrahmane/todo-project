@@ -23,12 +23,15 @@ const AddTodoPage = ({ addTodoSubmit }) => {
         priority,
         dueDate : today,
         createdAt : today,
-        updatedAt : '',
+        updatedAt : today,
         tags : '',
         assignedTo,
       }
-      addTodoSubmit(newTodo)
+
+      
+      const resultTodo = addTodoSubmit(newTodo);
       toast.success('Todo Added Successfully')
+
       return navigate('/todos')
 
     }
