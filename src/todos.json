@@ -1,0 +1,149 @@
+{
+    "todos": [
+    {
+        "id": 1,
+        "title": "Task 1",
+        "description": "This is the detailed description for task 1.",
+        "isCompleted": false,
+        "priority": "Medium",
+        "dueDate": "2024-10-04",
+        "createdAt": "2024-10-01 00:00:00",
+        "updatedAt": "2024-10-02 00:00:00",
+        "tags": [
+            "Personal",
+            "Urgent"
+        ],
+        "assignedTo": "JaneSmith"
+    },
+    {
+        "id": 2,
+        "title": "Task 2",
+        "description": "This is the detailed description for task 2.",
+        "isCompleted": true,
+        "priority": "Medium",
+        "dueDate": "2024-12-10",
+        "createdAt": "2024-10-01 00:00:00",
+        "updatedAt": "2024-12-25 00:00:00",
+        "tags": [
+            "Work"
+        ],
+        "assignedTo": "Unassigned"
+    },
+    {
+        "id": 3,
+        "title": "Task 3",
+        "description": "This is the detailed description for task 3.",
+        "isCompleted": true,
+        "priority": "Low",
+        "dueDate": "2024-10-22",
+        "createdAt": "2024-10-01 00:00:00",
+        "updatedAt": "2024-10-18 00:00:00",
+        "tags": [
+            "Personal",
+            "Urgent"
+        ],
+        "assignedTo": "Unassigned"
+    },
+    {
+        "id": 4,
+        "title": "Task 4",
+        "description": "This is the detailed description for task 4.",
+        "isCompleted": false,
+        "priority": "Low",
+        "dueDate": "2024-10-23",
+        "createdAt": "2024-10-01 00:00:00",
+        "updatedAt": "2024-11-01 00:00:00",
+        "tags": [
+            "Work"
+        ],
+        "assignedTo": "JaneSmith"
+    },
+    {
+        "id": 5,
+        "title": "Task 5",
+        "description": "This is the detailed description for task 5.",
+        "isCompleted": true,
+        "priority": "Medium",
+        "dueDate": "2024-11-30",
+        "createdAt": "2024-10-01 00:00:00",
+        "updatedAt": "2024-12-12 00:00:00",
+        "tags": [
+            "Personal"
+        ],
+        "assignedTo": "Unassigned"
+    },
+    {
+        "id": 6,
+        "title": "Task 6",
+        "description": "This is the detailed description for task 6.",
+        "isCompleted": true,
+        "priority": "Medium",
+        "dueDate": "2024-11-17",
+        "createdAt": "2024-10-01 00:00:00",
+        "updatedAt": "2024-10-29 00:00:00",
+        "tags": [
+            "Work",
+            "Important"
+        ],
+        "assignedTo": "JaneSmith"
+    },
+    {
+        "id": 7,
+        "title": "Task 7",
+        "description": "This is the detailed description for task 7.",
+        "isCompleted": true,
+        "priority": "High",
+        "dueDate": "2024-12-27",
+        "createdAt": "2024-10-01 00:00:00",
+        "updatedAt": "2024-12-04 00:00:00",
+        "tags": [
+            "Personal",
+            "Urgent"
+        ],
+        "assignedTo": "JaneSmith"
+    },
+    {
+        "id": 8,
+        "title": "Task 8",
+        "description": "This is the detailed description for task 8.",
+        "isCompleted": false,
+        "priority": "High",
+        "dueDate": "2024-11-13",
+        "createdAt": "2024-10-01 00:00:00",
+        "updatedAt": "2024-12-05 00:00:00",
+        "tags": [
+            "Shopping"
+        ],
+        "assignedTo": "JohnDoe"
+    },
+    {
+        "id": 9,
+        "title": "Task 9",
+        "description": "This is the detailed description for task 9.",
+        "isCompleted": false,
+        "priority": "High",
+        "dueDate": "2024-11-19",
+        "createdAt": "2024-10-01 00:00:00",
+        "updatedAt": "2024-11-25 00:00:00",
+        "tags": [
+            "Work"
+        ],
+        "assignedTo": "JaneSmith"
+    },
+    {
+        "id": 10,
+        "title": "Task 10",
+        "description": "This is the detailed description for task 10.",
+        "isCompleted": false,
+        "priority": "High",
+        "dueDate": "2024-12-04",
+        "createdAt": "2024-10-01 00:00:00",
+        "updatedAt": "2024-10-13 00:00:00",
+        "tags": [
+            "Personal",
+            "Urgent"
+        ],
+        "assignedTo": "JaneSmith"
+    }
+]
+}
