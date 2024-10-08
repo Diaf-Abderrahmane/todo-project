@@ -22,8 +22,13 @@ const App = () => {
       body: JSON.stringify(newTodo),
 
     });
+    if (!res.ok) {
+      throw new Error(`Failed to create todo: ${res.status} ${res.statusText}`);
+    }
+    const data = await res.json()    
+    console.log(data);
     
-    return 
+    return data
   }
 
 

@@ -13,7 +13,7 @@ const AddTodoPage = ({ addTodoSubmit }) => {
     const [priority, setPriority] = useState('Low');
     const navigate = useNavigate();
 
-    const submitForm = (e) => {
+    const submitForm = async (e) => {
       const today = new Date().toISOString().split('T')[0];
       e.preventDefault();
       const newTodo = {
@@ -28,11 +28,12 @@ const AddTodoPage = ({ addTodoSubmit }) => {
         assignedTo,
       }
 
-      
-      const resultTodo = addTodoSubmit(newTodo);
+      const createdTodo = await addTodoSubmit(newTodo);
       toast.success('Todo Added Successfully')
-
-      return navigate('/todos')
+      console.log(createdTodo);
+      
+      // return navigate('/todos')
+      return navigate(`/todos/${createdTodo.id}`)
 
     }
 
