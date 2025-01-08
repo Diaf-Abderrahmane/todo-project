@@ -11,6 +11,7 @@ const AddTodoPage = ({ addTodoSubmit }) => {
     const [description, setDescription] = useState('');
     const [assignedTo, setType] = useState('Abdou');
     const [priority, setPriority] = useState('Low');
+    const [actuality, setActuality] = useState('actual');
     const navigate = useNavigate();
 
     const submitForm = async (e) => {
@@ -21,6 +22,7 @@ const AddTodoPage = ({ addTodoSubmit }) => {
         description,
         isCompleted : false,
         priority,
+        actuality,
         dueDate : today,
         createdAt : today,
         updatedAt : today,
@@ -100,6 +102,24 @@ const AddTodoPage = ({ addTodoSubmit }) => {
             <option value="Low">Low</option>
             <option value="Medium">Medium</option>
             <option value="High">High</option>
+          </select>
+        </div>
+
+        {/* Actualité */}
+        <div className="mb-4">
+          <label htmlFor="actuality" className="block text-gray-700 font-bold mb-2"
+            >Actualité
+          </label>
+          <select
+            id="actuality"
+            name="actuality"
+            className="border rounded w-full py-2 px-3"
+            required
+            value={actuality}
+            onChange={(e) => setActuality(e.target.value)}
+          >
+            <option value="Actual">Actual</option>
+            <option value="Potential">Potential</option>
           </select>
         </div>
 

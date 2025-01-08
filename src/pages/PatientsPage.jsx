@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import TodosListings from '../components/TodosListings';
+import PatientsListings from '../components/PatientsListings';
 
 
-const TodosPage = () => {
+const PatientsPage = () => {
   // const [todos, setTodos] = useState([]);
 
   // useEffect(() => {
@@ -20,8 +20,8 @@ const TodosPage = () => {
 
 
   return (
-    <TodosListings/>
+    <PatientsListings/>
 )
 }
 
-export default TodosPage
+export default PatientsPage
