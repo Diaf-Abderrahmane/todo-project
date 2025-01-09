@@ -12,6 +12,7 @@ import PatientDetailPage from './pages/PatientDetailPage';
 import { patientLoader } from './pages/PatientDetailPage';
 import SignInPage from './pages/SignInPage';
 import PatientsPage from './pages/PatientsPage';
+import AdverseEventsPage from './pages/AdverseEventsPage';
 
 
 
@@ -77,7 +78,7 @@ const App = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(mongoAdverseEvent),
+        body: JSON.stringify(mongoAdverseEvent),x
       });
   
       if (!mongoResponse.ok) {
@@ -112,6 +113,7 @@ const App = () => {
     {/* <Route path="/practitioners" element={<HomePage />} /> */}
 
     <Route path='/patients' element={<PatientsPage/>}/>
+    <Route path='/adverseevents' element={<AdverseEventsPage/>}/>
     <Route path='/todos/:id' element={<TodoDetailPage deleteTodoMethod={deleteTodo}/>} loader={todoLoader}/>
     <Route path='/patients/:id' element={<PatientDetailPage />} loader={patientLoader}/>
     <Route path='/add-todo' element={<AddTodoPage addTodoSubmit={addTodo}/>} />

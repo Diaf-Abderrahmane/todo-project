@@ -55,9 +55,14 @@ const Navbar = () => {
                   </>
                 )}
                 {role === 'practitioner' && (
+                  <>
                   <NavLink to={`/patients`} className={linkClass}>
                     Patients
                   </NavLink>
+                  <NavLink to={`/adverseevents`} className={linkClass}>
+                    Adverse Events
+                  </NavLink>
+                  </>
                 )}
                 <button
                     onClick={handleLogout}

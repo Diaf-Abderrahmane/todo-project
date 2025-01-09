@@ -6,26 +6,51 @@ const AddAdverseEventPage = ({ addAdverseEventSubmit }) => {
   const [category, setCategory] = useState('');
   const [occurrenceDateTime, setOccurrenceDateTime] = useState('');
   const [seriousness, setSeriousness] = useState('');
+  const [outcome, setOutcome] = useState(''); // New field for outcome
   const navigate = useNavigate();
 
+  const userId = localStorage.getItem('userId'); // Get userId from localStorage
+
+  // Get the patient data from location state
+  console.log("user id is" + userId);
+  
   const submitForm = async (e) => {
     e.preventDefault();
     
+    // Fetch patient data using userId
+    const response = await fetch(`http://localhost:8080/api/patients/${userId}`);
+    const patientData = await response.json();
+    console.log(patientData);
+    
+    
+    // Set the patient's name to the display field
+    const patientName = `${patientData.name?.[0]?.given?.[0]} ${patientData.name?.[0]?.family}`;
+    console.log(patientName);
+    
+  
     const newAdverseEvent = {
       resourceType: 'AdverseEvent',
-      // Map the category as a list of CodeableConcepts
-      category: [createCodeableConcept(category)], // Assuming category is a single string. If multiple categories
+      category: [createCodeableConcept(category)],
       occurrenceDateTime,
-      // Map the seriousness as a CodeableConcept
       seriousness: createCodeableConcept(seriousness),
-
-    
+      outcome: [createCodeableConcept(outcome)],
+      subject: {
+        reference: `Patient/${userId}`,
+        type: 'Patient',
+        identifier: {
+          system: 'http://example.com/patient-identifier',
+          value: userId,
+        },
+        display: patientName, // Use the fetched patient's name here
+      },
     };
-
+  
+    // Call the addAdverseEventSubmit function to submit the new adverse event
     const createdAdverseEvent = await addAdverseEventSubmit(newAdverseEvent);
     toast.success('Adverse Event Added Successfully');
     console.log(createdAdverseEvent);
-
+  
+    // Optionally navigate to the new event details page
     // return navigate(`/adverseevents/${createdAdverseEvent.id}`);
   };
 
@@ -83,6 +108,20 @@ const AddAdverseEventPage = ({ addAdverseEventSubmit }) => {
               </select>
             </div>
 
+            {/* Outcome */}
+            <div className="mb-4">
+              <label htmlFor="outcome" className="block text-gray-700 font-bold mb-2">Outcome</label>
+              <input
+                type="text"
+                id="outcome"
+                name="outcome"
+                className="border rounded w-full py-2 px-3 mb-2"
+                placeholder="Describe the outcome"
+                value={outcome}
+                onChange={(e) => setOutcome(e.target.value)}
+                required
+              />
+            </div>
 
             {/* Submit Button */}
             <div>

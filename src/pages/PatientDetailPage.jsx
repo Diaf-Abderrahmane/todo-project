@@ -63,6 +63,9 @@ const PatientDetailPage = () => {
                     <p className="text-gray-500">{`ID: ${patient.generalPractitioner?.[0]?.identifier?.value}`}</p>
                   </div>
                 </div>
+
+                {/* Add Adverse Event Button */}
+              
               </main>
 
               {/* Sidebar */}
