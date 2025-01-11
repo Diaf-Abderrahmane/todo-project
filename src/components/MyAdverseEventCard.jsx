@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';  // For navigating to the patient's det
 import { FaUser, FaBirthdayCake, FaMedkit } from 'react-icons/fa';  // Icons for display
 import { FaCalendarAlt, FaExclamationTriangle } from 'react-icons/fa';
 
-const   AdverseEventCard = ({ adverseEvent }) => {
+const   MyAdverseEventCard = ({ adverseEvent }) => {
   
   /// Destructure subject details with fallback values
 const status = adverseEvent?.status || 'Not Specified';
@@ -28,10 +28,6 @@ const categoryDisplay =
         <span className="font-semibold">Status:</span> {status}
       </div> */}
       <div className="mb-2">
-        <FaUser className="inline-block mr-2 text-blue-500" />
-        <span className="font-semibold">Patient Name:</span> {patientName}
-      </div>
-      <div className="mb-2">
         <FaCalendarAlt className="inline-block mr-2 text-green-500" />
         <span className="font-semibold">Occurrence Date:</span> {new Date(occurrenceDateTime).toLocaleString()}
       </div>
@@ -48,5 +44,5 @@ const categoryDisplay =
   );
 };
 
-export default AdverseEventCard;
+export default MyAdverseEventCard;
 

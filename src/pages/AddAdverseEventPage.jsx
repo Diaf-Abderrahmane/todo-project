@@ -92,21 +92,29 @@ const AddAdverseEventPage = ({ addAdverseEventSubmit }) => {
               />
             </div>
 
-            {/* Seriousness */}
             <div className="mb-4">
-              <label htmlFor="seriousness" className="block text-gray-700 font-bold mb-2">Seriousness</label>
-              <select
-                id="seriousness"
-                name="seriousness"
-                className="border rounded w-full py-2 px-3"
-                value={seriousness}
-                onChange={(e) => setSeriousness(e.target.value)}
-                required
-              >
-                <option value="Serious">Serious</option>
-                <option value="Non-serious">Non-serious</option>
-              </select>
-            </div>
+  <label htmlFor="seriousness" className="block text-gray-700 font-bold mb-2">
+    Seriousness: <span className="text-indigo-500">{seriousness}</span> {/* Display the current value */}
+  </label>
+  <input
+    id="seriousness"
+    type="range"
+    min="1"
+    max="5"
+    step="1"
+    className="w-full appearance-none bg-gray-200 rounded-lg h-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+    value={seriousness}
+    onChange={(e) => setSeriousness(e.target.value)}
+    required
+  />
+  <div className="flex justify-between text-sm mt-2 text-gray-500">
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+    <span>5</span>
+  </div>
+</div>
 
             {/* Outcome */}
             <div className="mb-4">

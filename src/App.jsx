@@ -1,10 +1,10 @@
 import React from 'react'
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider, useNavigate} from 'react-router-dom'
-import HomePage from './pages/HomePage';
+// import HomePage from './pages/HomePage';
 import MainLayout from './layouts/MainLayout';
-import TodosPage from './pages/PatientsPage';
+// import TodosPage from './pages/PatientsPage';
 import NotFoundPage from './pages/NotFoundPage';
-import TodoDetailPage, { todoLoader } from './pages/TodoDetailPage';
+// import TodoDetailPage, { todoLoader } from './pages/TodoDetailPage';
 import AddTodoPage from './pages/AddTodoPage';
 import AddAdverseEventPage from './pages/AddAdverseEventPage';
 import AdverseEventDetailPage from './pages/AdverseEventDetailPage';
@@ -13,29 +13,32 @@ import { patientLoader } from './pages/PatientDetailPage';
 import SignInPage from './pages/SignInPage';
 import PatientsPage from './pages/PatientsPage';
 import AdverseEventsPage from './pages/AdverseEventsPage';
+import MyAdverseEventsPage from './pages/MyAdverseEventsPage'
+import { adverseeventLoader } from './pages/AdverseEventDetailPage';
+import AppointmentsPage from './pages/AppointmentsPage';
 
 
 
 const App = () => {
 
-  const addTodo = async (newTodo) => {
+  // const addTodo = async (newTodo) => {
     
-    const res = await fetch('http://localhost:5000/todos', {
-      method: 'POST',
-      headers: {
-        'Content-Type' : 'Application/json'
-      },
-      body: JSON.stringify(newTodo),
+  //   const res = await fetch('http://localhost:5000/todos', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type' : 'Application/json'
+  //     },
+  //     body: JSON.stringify(newTodo),
 
-    });
-    if (!res.ok) {
-      throw new Error(`Failed to create todo: ${res.status} ${res.statusText}`);
-    }
-    const data = await res.json()    
-    console.log(data);
+  //   });
+  //   if (!res.ok) {
+  //     throw new Error(`Failed to create todo: ${res.status} ${res.statusText}`);
+  //   }
+  //   const data = await res.json()    
+  //   console.log(data);
     
-    return data
-  }
+  //   return data
+  // }
 
   const addAdverseevent = async (newAdverseEvent) => {
 
@@ -78,7 +81,7 @@ const App = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(mongoAdverseEvent),x
+        body: JSON.stringify(mongoAdverseEvent),
       });
   
       if (!mongoResponse.ok) {
@@ -98,12 +101,12 @@ const App = () => {
   
 
 
-  const deleteTodo = async (id) => {
-    const res = await fetch(`http://localhost:5000/todos/${id}`, {
-      method: 'DELETE'
-    });
-    return
-  }
+  // const deleteTodo = async (id) => {
+  //   const res = await fetch(`http://localhost:5000/todos/${id}`, {
+  //     method: 'DELETE'
+  //   });
+  //   return
+  // }
 
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -113,14 +116,21 @@ const App = () => {
     {/* <Route path="/practitioners" element={<HomePage />} /> */}
 
     <Route path='/patients' element={<PatientsPage/>}/>
-    <Route path='/adverseevents' element={<AdverseEventsPage/>}/>
-    <Route path='/todos/:id' element={<TodoDetailPage deleteTodoMethod={deleteTodo}/>} loader={todoLoader}/>
     <Route path='/patients/:id' element={<PatientDetailPage />} loader={patientLoader}/>
-    <Route path='/add-todo' element={<AddTodoPage addTodoSubmit={addTodo}/>} />
+
+    <Route path='/adverseevents' element={<AdverseEventsPage/>}/>
     <Route path='/add-adverseevent' element={<AddAdverseEventPage addAdverseEventSubmit={addAdverseevent}/>} />
-    <Route path='/adverseevents/:id' element={<AdverseEventDetailPage/>} loader={todoLoader}/>
+    <Route path='/adverseevents/:id' element={<AdverseEventDetailPage />} loader={adverseeventLoader}/>
+
+
+    <Route path='/appointments' element={<AppointmentsPage/>}/>
+    <Route path='/my-adverseevents' element={<MyAdverseEventsPage/>}/>
+
+
+    {/* <Route path='/todos/:id' element={<TodoDetailPage deleteTodoMethod={deleteTodo}/>} loader={todoLoader}/> */}
+    {/* <Route path='/add-todo' element={<AddTodoPage addTodoSubmit={addTodo}/>} /> */}
     <Route path='*' element={<NotFoundPage/>}/>
-      {/* <Route path='*' element={<NotFoundPage/>}/> */}
+    
     </Route>
   )
   );

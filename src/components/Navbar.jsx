@@ -52,6 +52,12 @@ const Navbar = () => {
                     <NavLink to="/add-adverseevent" className={linkClass}>
                       Add Adverse Event
                     </NavLink>
+                    <NavLink to="/appointments" className={linkClass}>
+                      Appointments
+                    </NavLink>
+                    <NavLink to="/my-adverseevents" className={linkClass}>
+                      My Adverse Events
+                    </NavLink>
                   </>
                 )}
                 {role === 'practitioner' && (

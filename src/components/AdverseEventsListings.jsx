@@ -45,7 +45,7 @@ const AdverseEventsListings = () => {
               <NoTodos /> // Display the NoPatients component if no patients
             ) : (
               adverseevents.map((adverseevent) => (
-                <AdverseEventCard key={adverseevent._id} adverseEvent={adverseevent} />
+                <AdverseEventCard key={adverseevent.id} adverseEvent={adverseevent} />
               ))
             )}
           </div>
