@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link, useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 
@@ -6,41 +6,7 @@ const PatientDetailPage = () => {
   const { id } = useParams();
   const patient = useLoaderData(); // Data loaded using react-router's loader
   const navigate = useNavigate();
-  const [implant, setImplant] = useState(null);
-  const [loading, setLoading] = useState(true);
-
   const role = localStorage.getItem('role'); // Retrieve role from local storage
-  const userId = localStorage.getItem('userId'); // Retrieve the patient ID from localStorage
-
-
-
-  useEffect(() => {
-    const fetchDevices = async () => {
-      try {
-        const res = await fetch('http://localhost:8080/devices');
-        if (!res.ok) {
-          throw new Error(`HTTP error! Status: ${res.status}`);
-        }
-        const data = await res.json();
-
-        // Filter adverse events by userId
-        const filteredEvents = data.filter(
-          (event) =>
-            event.subject?.identifier?.value === userId || // Matches the identifier value
-            event.subject?.reference?.split('/')[1] === userId // Matches the reference ID
-        );
-
-        setImplant(filteredEvents);
-        console.log(filteredEvents);
-      } catch (error) {
-        console.error('Error fetching data', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchDevices();
-  }, [userId]); // Add userId as a dependency for useEffect
 
   return (
     <>
@@ -110,39 +76,31 @@ const PatientDetailPage = () => {
                   {patient.id}
                 </p>
 
-                {/* Implant Details */}
+                {/* Static Implant Details */}
                 <div className="bg-gray-100 p-4 rounded-lg shadow-md mt-6">
-                  {loading ? (
-                    <p>Loading implant details...</p>
-                  ) : implant ? (
-                    <>
-                      <img
-                        src={
-                          implant.imageUrl ||
-                          'https://assets.cochlear.com/api/public/content/5fe02d403a42453db48d01ef1c6269a1?v=277a9014'
-                        }
-                        alt="Implant"
-                        className="w-full h-40 object-cover rounded-lg mb-4"
-                      />
-                      <h4 className="text-lg font-bold mb-2">Implant Details</h4>
-                      <ul className="text-gray-700">
-                        <li>
-                          <span className="font-bold">Status:</span>{' '}
-                          {implant.status || 'Unknown'}
-                        </li>
-                        <li>
-                          <span className="font-bold">Model Number:</span>{' '}
-                          {implant.modelNumber || 'Not Provided'}
-                        </li>
-                        <li>
-                          <span className="font-bold">Serial Number:</span>{' '}
-                          {implant.serialNumber || 'Not Provided'}
-                        </li>
-                      </ul>
-                    </>
-                  ) : (
-                    <p>No implant details available.</p>
-                  )}
+                  <img
+                    src="https://assets.cochlear.com/api/public/content/5fe02d403a42453db48d01ef1c6269a1?v=277a9014"
+                    alt="Implant"
+                    className="w-full h-40 object-cover rounded-lg mb-4"
+                  />
+                  <h4 className="text-lg font-bold mb-2">Implant Details</h4>
+                  <ul className="text-gray-700">
+                    <li>
+                      <span className="font-bold">Status:</span> Active
+                    </li>
+                    <li>
+                      <span className="font-bold">Model Number:</span> CX-4567
+                    </li>
+                    <li>
+                      <span className="font-bold">Serial Number:</span> 789456123
+                    </li>
+                    <li>
+                      <span className="font-bold">Manufacturer:</span> MediTech Inc.
+                    </li>
+                    <li>
+                      <span className="font-bold">Implant Date:</span> 2023-07-15
+                    </li>
+                  </ul>
                 </div>
               </div>
             </aside>

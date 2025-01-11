@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLoaderData, useNavigate, useParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
@@ -126,29 +127,29 @@ const AdverseEventDetailPage = () => {
         <div className="container m-auto py-10 px-6">
           <div className="grid grid-cols-1 md:grid-cols-70/30 w-full gap-6">
             <main>
-              <div className="bg-white p-6 rounded-lg shadow-md text-center md:text-left">
-                <div className="text-gray-500 mb-4">Adverse Event ID: {adverseEvent.id}</div>
-                <h1 className="text-3xl font-bold mb-4">
-                  {'Categorie : ' + adverseEvent?.category?.[0]?.display || 'Uncategorized'}
-                </h1>
-                <div className="text-gray-500 mb-4 flex align-middle justify-center md:justify-start">
-                  <p className="text-gray-700">
-                    Seriousness: {adverseEvent.seriousness?.display || 'Not Specified'}
-                  </p>
+                <div className="bg-white p-6 rounded-lg shadow-md text-center md:text-left">
+                  <div className="text-gray-500 mb-4">Adverse Event ID: {adverseEvent.id}</div>
+                  <h1 className="text-3xl font-bold mb-4">
+                    {'Categorie : ' + adverseEvent?.category?.[0]?.display || 'Uncategorized'}
+                  </h1>
+                  <div className="text-gray-500 mb-4 flex align-middle justify-center md:justify-start">
+                    <p className="text-gray-700">
+                      Seriousness: {adverseEvent.seriousness?.display || 'Not Specified'}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-gray-700">
+                      Occurrence Date: {adverseEvent.occurrenceDateTime || 'Not Provided'}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-gray-700">
+                      Outcome: {adverseEvent.outcome?.[0]?.display || 'Not Specified'}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-gray-700">
-                    Occurrence Date: {adverseEvent.occurrenceDateTime || 'Not Provided'}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-gray-700">
-                    Outcome: {adverseEvent.outcome?.[0]?.display || 'Not Specified'}
-                  </p>
-                </div>
-              </div>
 
-              {/* Calendar Component for Appointments */}
+              {/* Calendar Component for Appointments
               {role === 'practitioner' && (
                                 <>
                                 <NavLink to={`/patients`} className={linkClass}>
@@ -158,7 +159,7 @@ const AdverseEventDetailPage = () => {
                                   Adverse Events
                                 </NavLink>
                                 </>
-                              )}
+                              )} */}
               
               {role === 'practitioner' && (
               <div className="bg-white p-6 rounded-lg shadow-md mt-6">
